@@ -62,9 +62,9 @@ def index(request):
         # Process Test Data
 
         test_img=process_file(imagedata);
-        print "Predicting"
+        print ("Predicting")
         res=model.predict(numpy.stack([test_img]))
-        print res
+        print (res)
         numpy.set_printoptions(suppress=True)
         if res[0][1]>=res[0][0]:
             output="Vidhan Soudha"
@@ -77,9 +77,9 @@ def index(request):
         success_json['output']=output
         success_json['status']=1
 
-        print "Upload has a prediction of : ",output," with ",res[0]
+        print ("Upload has a prediction of : ",output," with ",res[0])
         return HttpResponse(json.dumps(success_json), content_type="application/json")
     except Exception,e:
-        print str(e)
+        print (str(e))
         error_json['status']=-1
         return HttpResponse(json.dumps(error_json), content_type="application/json");
