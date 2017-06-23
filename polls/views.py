@@ -47,15 +47,15 @@ def index(request):
     if not request.method=="POST":
         return HttpResponse("This is the api gateway for the application")
     try:        
-    	image_base64=request.POST['image'];
-    	#f_name=str(int(time.time()*100))+".jpg"
-    	#print f_name
-    	#return HttpResponse(image_base64)
-    	#if not os.path.exists("media/uploads"):
-    	#	os.makedirs("media/uploads");
-    	#with open("media/uploads/"+f_name, "wb") as fh:
-    	#	fh.write(base64.decodestring(str(image_base64)))
-    	#	fh.close()
+        image_base64=request.POST['image'];
+        #f_name=str(int(time.time()*100))+".jpg"
+        #print f_name
+        #return HttpResponse(image_base64)
+        #if not os.path.exists("media/uploads"):
+        #	os.makedirs("media/uploads");
+        #with open("media/uploads/"+f_name, "wb") as fh:
+        #	fh.write(base64.decodestring(str(image_base64)))
+        #	fh.close()
         decoded_data=base64.decodestring(str(image_base64))
         imagedata=resize_image(decoded_data);
         
@@ -80,6 +80,6 @@ def index(request):
         print "Upload has a prediction of : ",output," with ",res[0]
         return HttpResponse(json.dumps(success_json), content_type="application/json")
     except Exception,e:
-    	print str(e)
+        print str(e)
         error_json['status']=-1
-    	return HttpResponse(json.dumps(error_json), content_type="application/json");
+        return HttpResponse(json.dumps(error_json), content_type="application/json");
