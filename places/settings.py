@@ -128,6 +128,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+"""
 json_file=open("model.json","r")
 loaded_json=json_file.read()
 json_file.close()
@@ -135,3 +136,4 @@ json_file.close()
 model=model_from_json(loaded_json)
 model.load_weights("model.h5")
 MODEL=model
+"""
