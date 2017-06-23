@@ -1,3 +1,6 @@
 Pushing to Heroku
 Keras - using theano instead of tensorflow
     heroku config:set KERAS_BACKEND=theano
+    
+use this buildpack:
+    heroku buildpacks:add https://github.com/gaborvecsei/conda-buildpack

@@ -79,7 +79,7 @@ def index(request):
 
         print ("Upload has a prediction of : ",output," with ",res[0])
         return HttpResponse(json.dumps(success_json), content_type="application/json")
-    except Exception,e:
+    except Exception as e:
         print (str(e))
         error_json['status']=-1
         return HttpResponse(json.dumps(error_json), content_type="application/json");
