@@ -4,3 +4,4 @@ Keras - using theano instead of tensorflow
     
 use this buildpack:
     heroku buildpacks:add https://github.com/gaborvecsei/conda-buildpack
+    

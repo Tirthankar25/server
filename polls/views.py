@@ -47,7 +47,8 @@ def index(request):
     if not request.method=="POST":
         return HttpResponse("This is the api gateway for the application")
     try:        
-        image_base64=request.POST['image'];
+        image_base64=request.POST['image']
+        print ("check 1")
         #f_name=str(int(time.time()*100))+".jpg"
         #print f_name
         #return HttpResponse(image_base64)
