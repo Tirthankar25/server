@@ -19,7 +19,7 @@ taj_mahal_img="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Taj_Mah
 success_json={}
 error_json={}
 
-model=settings.MODEL 
+#model=settings.MODEL 
 
 def process_file(img):
     #img=imread(path)
@@ -44,6 +44,7 @@ def resize_image(data,dimX=None,dimY=None):
 
 @csrf_exempt
 def index(request):
+    model=settings.MODEL 
     if not request.method=="POST":
         return HttpResponse("This is the api gateway for the application")
     try:  
