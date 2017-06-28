@@ -46,8 +46,9 @@ def resize_image(data,dimX=None,dimY=None):
 def index(request):
     if not request.method=="POST":
         return HttpResponse("This is the api gateway for the application")
-    try:        
-        image_base64=request.POST['image']
+    try:  
+        print ('check0....')
+        image_base64=request.POST.get("image")
         print ("check 1")
         #f_name=str(int(time.time()*100))+".jpg"
         #print f_name

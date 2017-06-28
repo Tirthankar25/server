@@ -5,3 +5,8 @@ Keras - using theano instead of tensorflow
 use this buildpack:
     heroku buildpacks:add https://github.com/gaborvecsei/conda-buildpack
     
+for associating an app with heroku:
+    heroku git:remote -a appname
+    then do: git push heroku master
+    
+    
