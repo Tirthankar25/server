@@ -58,7 +58,7 @@ def index(request):
         #with open("media/uploads/"+f_name, "wb") as fh:
         #	fh.write(base64.decodestring(str(image_base64)))
         #	fh.close()
-        decoded_data=base64.b64decode(bytes(image_base64))
+        decoded_data=base64.b64decode(image_base64)
         imagedata=resize_image(decoded_data);
         
         # Process Test Data
